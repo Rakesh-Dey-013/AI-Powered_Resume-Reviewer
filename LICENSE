@@ -1,0 +1,138 @@
+# MIT License
+
+## Copyright (c) 2026 AI Resume Reviewer Project
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+---
+
+## Important Disclaimers and Notices
+
+### 🎯 **Purpose and Limitations**
+
+**AI Resume Reviewer** is a demonstration project created for educational and hackathon purposes. The software provides AI-simulated analysis of resumes and should be used accordingly:
+
+1. **Not Professional Career Advice**: The AI-generated feedback, scores, and recommendations are simulated and should not be considered as professional career advice, coaching, or guaranteed to match actual Applicant Tracking System (ATS) results.
+
+2. **Educational Tool**: This project demonstrates AI integration, full-stack development, and modern UI/UX patterns. It is intended for learning and demonstration purposes.
+
+3. **No Guarantees**: There are no guarantees regarding job application outcomes, interview success, or career advancement based on using this software.
+
+### 🔒 **Privacy and Data Security**
+
+1. **No Data Storage**: The application processes resumes in memory and does not permanently store uploaded files. Files are processed and immediately discarded.
+
+2. **User Responsibility**: Users are solely responsible for:
+   - Ensuring they have the rights to upload and analyze any resumes
+   - Not uploading sensitive personal information
+   - Not uploading data belonging to others without proper authorization
+   - Complying with applicable privacy laws and regulations
+
+3. **API Data**: When using the Groq API, resume text is transmitted to third-party servers for processing. Review Groq's privacy policy and terms of service.
+
+### ⚖️ **Legal Compliance**
+
+1. **Local Laws**: Users must ensure their use of this software complies with:
+   - Data protection regulations (GDPR, CCPA, etc.)
+   - Employment and privacy laws in their jurisdiction
+   - Terms of service of integrated third-party services
+
+2. **Age Restrictions**: Users must be of legal age in their jurisdiction to use AI services and upload personal data.
+
+### 🤖 **AI and Third-Party Services**
+
+This project integrates with several third-party services:
+
+1. **Groq API**: Provides AI inference capabilities
+   - Subject to Groq's terms of service and usage policies
+   - Free tier has usage limits and restrictions
+   - Data transmitted to Groq is subject to their privacy policy
+
+2. **AI Models**: Utilizes Llama 3 and Mixtral models
+   - Provided by Meta and Mistral AI respectively
+   - Subject to their respective licenses and terms
+
+3. **Open Source Libraries**: This project uses numerous open-source libraries (React, Node.js, Express, Tailwind CSS, etc.) each with their own licenses.
+
+### 📊 **Accuracy Disclaimer**
+
+1. **Simulated Scoring**: ATS scores are AI-simulated estimates, not actual ATS algorithm outputs. Different ATS systems (Workday, Greenhouse, Lever, etc.) use proprietary algorithms that may produce different results.
+
+2. **AI Limitations**: AI models may:
+   - Generate incorrect or misleading information
+   - Have biases in their training data
+   - Provide inconsistent feedback
+   - Miss important context or nuances
+
+3. **Human Review Recommended**: Always have resumes reviewed by human career professionals before important job applications.
+
+### 🚫 **Prohibited Uses**
+
+You may NOT use this software for:
+
+1. **Commercial Services**: Offering paid resume review services without proper licensing and disclosures
+2. **Discrimination**: Making hiring decisions that could lead to discriminatory practices
+3. **Misrepresentation**: Claiming the software provides certified or guaranteed results
+4. **Illegal Activities**: Any unlawful purposes or violation of others' rights
+5. **Security Testing**: Attempting to breach the system's security without authorization
+
+### 👥 **Contributions**
+
+Contributions to this project are welcome under the following terms:
+
+1. **License Agreement**: By contributing, you agree that your contributions will be licensed under the same MIT License
+2. **Warranty**: You warrant that you have the right to contribute the code
+3. **Attribution**: Proper credit will be given to all contributors
+
+### 📧 **Contact and Support**
+
+For questions about this license or the software:
+
+- **Project Repository**: https://github.com/Rakesh-Dey-013/AI-Powered_Resume-Reviewer
+- **Issue Tracker**: https://github.com/Rakesh-Dey-013/AI-Powered_Resume-Reviewer/issues
+- **Security Issues**: Please report security vulnerabilities responsibly through the issue tracker
+
+### 🌐 **Open Source Acknowledgements**
+
+This project stands on the shoulders of giants in the open-source community. Special thanks to:
+
+- The React team and community
+- Node.js and Express.js maintainers
+- Tailwind CSS creators
+- Framer Motion developers
+- All other open-source library maintainers
+- The AI/ML research community
+
+---
+
+## Acceptance of Terms
+
+By using this software, you acknowledge that:
+
+1. You have read and understood this license agreement
+2. You accept all terms and conditions herein
+3. You understand the limitations and disclaimers
+4. You assume all risks associated with using the software
+5. You will not hold the authors liable for any consequences of using the software
+
+If you do not agree to these terms, do not use this software.
+
+---
+
+*Last Updated: December 2026*
