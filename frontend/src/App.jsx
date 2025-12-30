@@ -18,7 +18,7 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen bg-linear-to-br from-gray-900 to-gray-950">
+    <div className="min-h-screen bg-linear-to-br from-zinc-800 to-zinc-900">
       <AnimatePresence mode="wait">
         {currentPage === 'landing' ? (
           <motion.div

@@ -208,70 +208,105 @@ Return ONLY valid JSON, no additional text or explanations.`;
     };
   }
   
-  static getDemoFeedback(jobRole = 'Software Developer', experienceLevel = 'Mid') {
-    const roleSpecificTips = {
-      'Software Developer': {
-        missingSkills: ['Containerization (Docker/Kubernetes)', 'CI/CD pipeline experience', 'Cloud platform certification'],
-        recommendations: ['Add GitHub profile with projects', 'Include specific metrics in achievements', 'Mention testing frameworks used']
-      },
-      'Data Scientist': {
-        missingSkills: ['Big data technologies (Spark/Hadoop)', 'Cloud ML services', 'Advanced visualization tools'],
-        recommendations: ['Include link to Kaggle profile', 'Add specific model accuracy metrics', 'Mention data pipeline experience']
-      },
-      'Product Manager': {
-        missingSkills: ['Product analytics tools (Amplitude/Mixpanel)', 'A/B testing framework', 'Roadmap management software'],
-        recommendations: ['Quantify product impact with metrics', 'Include user research methods', 'Add product launch experience']
-      },
-      'Frontend Developer': {
-        missingSkills: ['Modern frameworks (Next.js/Nuxt.js)', 'Performance optimization tools', 'Accessibility standards'],
-        recommendations: ['Add links to live projects', 'Include Lighthouse scores', 'Mention cross-browser testing']
-      },
-      'Backend Developer': {
-        missingSkills: ['Microservices architecture', 'API design patterns', 'Database optimization'],
-        recommendations: ['Include API performance metrics', 'Add system design experience', 'Mention security practices']
-      },
-      'Full Stack Developer': {
-        missingSkills: ['DevOps experience', 'Cloud deployment', 'End-to-end testing'],
-        recommendations: ['Show full project examples', 'Include deployment statistics', 'Mention team collaboration tools']
-      }
-    };
-    
-    const tips = roleSpecificTips[jobRole] || roleSpecificTips['Software Developer'];
-    
-    // Generate a realistic score based on role and experience
-    const baseScore = experienceLevel === 'Senior' ? 75 : 
-                     experienceLevel === 'Mid' ? 70 : 65;
-    const randomVariation = Math.floor(Math.random() * 10);
-    const score = Math.min(95, baseScore + randomVariation);
-    
-    return {
-      summary: `This resume shows ${experienceLevel.toLowerCase()} level experience relevant to ${jobRole} positions. The structure is professional, but could be optimized with more specific achievements and better keyword targeting.`,
-      strengths: [
-        "Clean and professional formatting",
-        "Relevant work experience clearly presented",
-        "Good technical skills section with appropriate technologies",
-        "Clear career progression timeline"
-      ],
-      weaknesses: [
-        "Limited quantifiable achievements with metrics",
-        "Could use more action-oriented language",
-        "Missing some industry-specific keywords"
-      ],
-      missingSkills: tips.missingSkills,
-      atsOptimization: [
-        "Add more job-specific keywords throughout the resume",
-        "Use standard section headings for better ATS parsing",
-        "Include both full terms and acronyms for technologies"
-      ],
-      grammarImprovements: [
-        "Use consistent verb tenses throughout descriptions",
-        "Replace passive voice with active voice where possible",
-        "Ensure consistent formatting of dates and job titles"
-      ],
-      score: score,
-      recommendations: tips.recommendations
-    };
-  }
+static getDemoFeedback(jobRole = 'Software Developer', experienceLevel = 'Mid') {
+  const roleSpecificTips = {
+    'Software Developer': {
+      missingSkills: ['Containerization (Docker/Kubernetes)', 'CI/CD pipeline experience', 'Cloud platform certification'],
+      recommendations: ['Add GitHub profile with projects', 'Include specific metrics in achievements', 'Mention testing frameworks used']
+    },
+    'Data Scientist': {
+      missingSkills: ['Big data technologies (Spark/Hadoop)', 'Cloud ML services', 'Advanced visualization tools'],
+      recommendations: ['Include link to Kaggle profile', 'Add specific model accuracy metrics', 'Mention data pipeline experience']
+    },
+    'Product Manager': {
+      missingSkills: ['Product analytics tools (Amplitude/Mixpanel)', 'A/B testing framework', 'Roadmap management software'],
+      recommendations: ['Quantify product impact with metrics', 'Include user research methods', 'Add product launch experience']
+    },
+    'Frontend Developer': {
+      missingSkills: ['Modern frameworks (Next.js/Nuxt.js)', 'Performance optimization tools', 'Accessibility standards'],
+      recommendations: ['Add links to live projects', 'Include Lighthouse scores', 'Mention cross-browser testing']
+    },
+    'Backend Developer': {
+      missingSkills: ['Microservices architecture', 'API design patterns', 'Database optimization'],
+      recommendations: ['Include API performance metrics', 'Add system design experience', 'Mention security practices']
+    },
+    'Full Stack Developer': {
+      missingSkills: ['DevOps experience', 'Cloud deployment', 'End-to-end testing'],
+      recommendations: ['Show full project examples', 'Include deployment statistics', 'Mention team collaboration tools']
+    }
+  };
+  
+  const tips = roleSpecificTips[jobRole] || roleSpecificTips['Software Developer'];
+  
+  // Improved scoring logic - More realistic and encouraging
+  const baseScore = this.calculateRealisticScore(jobRole, experienceLevel);
+  
+  return {
+    summary: `This resume demonstrates strong qualifications for ${experienceLevel.toLowerCase()} level ${jobRole} positions. The content is well-structured and showcases relevant experience, with opportunities for further optimization.`,
+    strengths: [
+      "Professional and clean formatting that's ATS-friendly",
+      "Clear demonstration of relevant technical expertise",
+      "Good use of industry-standard terminology",
+      "Well-organized career progression timeline"
+    ],
+    weaknesses: [
+      "Could benefit from more quantifiable achievements",
+      "Opportunity to add more action-oriented language",
+      "Consider adding more industry-specific keywords"
+    ],
+    missingSkills: tips.missingSkills,
+    atsOptimization: [
+      "Increase keyword density with job-specific terms",
+      "Use standard section headers (Experience, Education, Skills)",
+      "Include both full terms and acronyms for technologies"
+    ],
+    grammarImprovements: [
+      "Maintain consistent verb tense throughout",
+      "Use active voice for stronger impact",
+      "Ensure consistent formatting of dates and locations"
+    ],
+    score: baseScore,
+    recommendations: tips.recommendations
+  };
+}
+
+static calculateRealisticScore(jobRole, experienceLevel) {
+  // Base scores adjusted to be more realistic
+  const baseScores = {
+    'Fresher': 75,  // Higher base for freshers (they're learning!)
+    'Mid': 78,      // Good resumes should score well
+    'Senior': 82    // Experienced professionals have better resumes
+  };
+  
+  let baseScore = baseScores[experienceLevel] || 78;
+  
+  // Add variation based on job role complexity
+  const roleModifiers = {
+    'Software Developer': 5,
+    'Frontend Developer': 4,
+    'Backend Developer': 6,
+    'Full Stack Developer': 7,
+    'Data Scientist': 8,
+    'Product Manager': 3,
+    'UX Designer': 2,
+    'DevOps Engineer': 7,
+    'Cloud Architect': 9
+  };
+  
+  baseScore += roleModifiers[jobRole] || 5;
+  
+  // Add some random variation (less variation for more realistic scores)
+  const randomVariation = Math.floor(Math.random() * 6) - 2; // -2 to +3
+  
+  // Ensure score is realistic but encouraging
+  let finalScore = baseScore + randomVariation;
+  
+  // Cap scores realistically
+  finalScore = Math.min(95, Math.max(65, finalScore));
+  
+  // Round to nearest 5 for cleaner display
+  return Math.round(finalScore / 5) * 5;
+}
 }
 
 module.exports = AnalyzeController;
